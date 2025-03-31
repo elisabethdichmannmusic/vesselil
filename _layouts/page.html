@@ -1,0 +1,14 @@
+---
+layout: base
+---
+<div class="page">
+  {%- if !!page.cover -%}
+  <img class="page-cover" src="{{ page.cover | prepend: site.baseurl }}" alt="{{ page.title }}" title="{{ page.title }}">
+{%- endif -%}
+
+
+  <div class="page-content">
+    {{ content }}
+  </div>
+
+</div>

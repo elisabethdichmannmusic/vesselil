@@ -1,0 +1,88 @@
+// Placeholder to allow defining custom styles that override everything else.
+// (Use `_sass/minima/custom-variables.scss` to override variable defaults)
+
+.site-title {
+  @include relative-font-size(2.0);
+}
+
+
+
+.frontpage-background-container {
+  position: relative;
+  display: block;
+
+}
+
+.frontpage-background {
+  width: calc(100vw - 20px);
+  margin-left: calc(-50vw + 50% + 10px);
+  max-width: none;
+}
+
+.members {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 1em;
+  h4 {
+    color: black;
+
+  }
+}
+
+h4 {
+  font-weight: $bold-font-weight;
+  @include relative-font-size(1.2);
+  color: $color-pink
+
+}
+
+
+
+@media screen and (max-width: $on-medium) {
+
+  .page {
+    display: grid;
+    width: 100%;
+    grid-template-areas:
+      "a"
+      "b";
+  }
+
+  .page-content {
+
+
+    width: 100%;
+    grid-area: a;
+  }
+
+  .page-cover {
+    width: 100%;
+    grid-area: b;
+
+
+  }
+}
+
+@media screen and (min-width: $on-medium) {
+
+  .page {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 45% auto 50%;
+
+    grid-template-areas:
+      "a none b";
+  }
+
+  .page-content {
+    grid-area: a;
+
+  }
+
+  .page-cover {
+    width:100%;
+    grid-area: b;
+    margin:0;
+
+  }
+}

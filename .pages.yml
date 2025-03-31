@@ -1,0 +1,77 @@
+media: media
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: _posts
+    view:
+      fields: [ cover, title ]
+    fields:
+      - { name: layout, type: string, hidden: true, default: post }
+      - { name: cover, label: Cover image, type: image }
+      - { name: title, label: Title, type: string, required: true }
+      - { name: author, label: Authors, type: string, list: true }
+      - { name: body, label: Body, type: rich-text }
+  - name: pages
+    label: Pages
+    type: collection
+    path: _pages
+    view:
+      fields: [ cover, title ]
+    fields:
+      - { name: layout, type: string, hidden: true, default: post }
+      - { name: sort_number, type: number, hidden: true }
+      - { name: cover, label: Cover image, type: image }
+      - { name: title, label: Title, type: string, required: true }
+      - { name: body, label: Body, type: rich-text }
+  - name: events
+    label: events
+    type: collection
+    path: _events
+    view:
+      fields: [ date, time, venue, price  ]
+    fields:
+      - { name: layout, type: string, hidden: true, default: event }
+      - { name: date, label: Date, type: date, required: true, options: { time:false, format: dd-MM-yyyy } }
+      - { name: time, label: Hour, type: number, required: false }
+      - { name: price, label: Price, type: number, required: true, default: 0 }
+      - { name: cover, label: Cover image, type: image, required: false }
+      - { name: title, label: Title, type: string, required: false }
+      - { name: venue, label: Venue, type: string, required: false }
+      - { name: link, label: Link, type: string, required: false }
+  - name: reviews
+    label: reviews
+    type: collection
+    path: _reviews
+    view:
+      fields: [ first_line ]
+    fields:
+      - { name: layout, type: string, hidden: true, default: event }
+      - { name: quote, label: Quote, type: string, required: true }
+      - { name: first_line, label: First line, type: string, required: true }
+      - { name: second_line, label: Second line, type: string, required: false }
+      - { name: link, label: Link, type: string, required: false }
+  - name: releases
+    label: releases
+    type: collection
+    path: _releases
+    view:
+      fields: [ title ]
+    fields:
+      - { name: layout, type: string, hidden: true, default: event }
+      - { name: title, label: Title, type: string, required: true }
+      - { name: date, label: Date, type: date, required: true, options: { time:false, format: dd-MM-yyyy } }
+      - { name: go_folk_link, label: Go folk link, type: string, required: false }
+      - { name: itunes_link, label: Itunes link, type: string, required: false }
+      - { name: cover, label: Cover image, type: image, required: true }
+  - name: videos
+    label: videos
+    type: collection
+    path: _videos
+    view:
+      fields: [ title ]
+    fields:
+      - { name: layout, type: string, hidden: true, default: event }
+      - { name: title, label: Title, type: string, required: true }
+      - { name: date, label: Date, type: date, required: true, options: { time:false, format: dd-MM-yyyy } }
+      - { name: youtube_link, label: Youtube link, type: string, required: true }
